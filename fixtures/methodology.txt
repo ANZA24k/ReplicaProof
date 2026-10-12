@@ -1,0 +1,7 @@
+SYNTHETIC FIXTURE — locked reproduction methodology.
+Use Python 3.12 asyncio, 100 concurrent callers, an instrumented upstream provider and immutable
+string keys. The provider increments a call counter and awaits 10 ms before returning the key's
+value. Compare a baseline provider against a per-key shared Task cache. Record counts, all-caller
+value agreement, and a second distinct key. Require counts baseline=100, cached=1, second key total=2.
+The environment, exact command, raw measurements, controls and any deviations must be disclosed.
+A sequential run or reuse of one fixed value for every key is a substantive methodological failure.

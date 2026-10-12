@@ -1,0 +1,5 @@
+SYNTHETIC FIXTURE — ReplicaProof technical reproduction pilot, not a real scientific study.
+Claim: a request coalescing cache avoids duplicate upstream work without serving stale values.
+For 100 concurrent reads of the same immutable key, the coalescing implementation makes exactly
+one upstream call. All 100 callers receive the same value. Changing the key creates a fresh upstream
+call, with no cross-key leakage. Baseline without coalescing makes 100 upstream calls.

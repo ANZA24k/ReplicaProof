@@ -1,0 +1,3 @@
+SYNTHETIC REPRODUCTION — insufficient evidence case.
+A cache was tested and seemed faster. No environment, command, raw counts, baseline control,
+concurrency details or second-key observations were recorded. This file intentionally lacks proof.

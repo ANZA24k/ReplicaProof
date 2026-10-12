@@ -1,0 +1,6 @@
+SYNTHETIC REPRODUCTION — deliberate failure case.
+Environment: CPython 3.12.14; Linux. The operator called the function 100 times sequentially instead
+of concurrently. The cache stored a single global value, ignoring key identity. Baseline upstream
+count=100. Cached alpha count=1. Beta returned the alpha value and upstream total stayed at 1.
+All beta values were incorrect. This implementation does not satisfy cross-key correctness and the
+run does not reproduce the required concurrency methodology. No valid qualifying result is claimed.

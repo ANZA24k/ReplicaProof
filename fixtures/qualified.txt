@@ -1,0 +1,7 @@
+SYNTHETIC REPRODUCTION — generated observations, no independent laboratory claim.
+Environment: CPython 3.12.14; asyncio; Linux. Command: python fixtures/reproduce.py.
+Used asyncio.gather on 100 coroutines. Provider awaited 0.01 seconds and incremented per-key count.
+Control without shared Tasks: 100 upstream calls; 100/100 values equal expected alpha value.
+Per-key shared Task cache: 1 upstream call; 100/100 values equal expected alpha value.
+Distinct beta key: total upstream calls=2; 100/100 beta values correct; no alpha value leaked.
+No deviations. See reproduce.py for transparent executable fixture generation.

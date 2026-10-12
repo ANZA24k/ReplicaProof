@@ -1,0 +1,5 @@
+SYNTHETIC SUPPLEMENT — additional audit of the qualified reproduction.
+Task sharing was scoped by immutable key in a Python dictionary. Both alpha and beta trials each
+used asyncio.gather over 100 concurrent reads; each trial had exactly one upstream invocation.
+A separate baseline instance bypassed the dictionary and made 100 calls. The second-key correctness
+assertions passed. This supports the existing qualified evidence and does not erase any earlier file.
