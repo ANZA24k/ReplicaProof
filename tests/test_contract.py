@@ -14,6 +14,7 @@ def ref(name='result.txt', body=BODY):
 @pytest.fixture
 def env():
     vm = VMContext()
+    vm.check_pickling = True
     vm.warp('2026-10-12T12:00:00Z')
     vm.sender = create_address('creator')
     with vm.activate():
@@ -114,3 +115,50 @@ def test_value_rejected(env):
     vm,c=env
     vm.value=1
     with pytest.raises(Exception): standard(c)
+
+
+def test_forged_leader_and_malformed_llm(env):
+    vm,c=env
+    st=real_standard(c)
+    sid=c.submit(st,json.dumps([ref(body=b'new evidence')]))
+    vm.mock_web('original|method',{'status':200,'body':BODY.decode()})
+    vm.mock_web('result',{'status':200,'body':'new evidence'})
+    vm.mock_llm(r'.*','{"checks":["PASS","FAIL"]}')
+    c.evaluate(sid)
+    assert not vm.run_validator(leader_result={'checks':['PASS','PASS'],'integrity':'VERIFIED','verified':[SHA,SHA,ref(body=b'new evidence')['sha256']]})
+    assert not vm.run_validator(leader_error=Exception('forged leader error'))
+    vm.clear_mocks()
+    vm.mock_web('original|method',{'status':200,'body':BODY.decode()})
+    vm.mock_web('result',{'status':200,'body':'new evidence'})
+    vm.mock_llm(r'.*','not json')
+    assert not vm.run_validator()
+
+
+def test_recheck_expiry_and_evaluation_expiry(env):
+    vm,c=env
+    st=real_standard(c)
+    sid=c.submit(st,json.dumps([ref(body=b'new evidence')]))
+    other=c.submit(st,json.dumps([ref('other.txt',b'other evidence')]))
+    vm.mock_web('original|method',{'status':200,'body':BODY.decode()})
+    vm.mock_web('result',{'status':200,'body':'new evidence'})
+    vm.mock_llm(r'.*','{"checks":["PASS","PASS"]}')
+    c.evaluate(sid)
+    vm.warp('2026-10-12T13:00:01Z')
+    with pytest.raises(Exception):c.recheck(sid,json.dumps([ref('supp.txt',b'supp')]),'Review supplemental observations')
+    vm.warp('2026-11-01T00:00:00Z')
+    with pytest.raises(Exception):c.evaluate(other)
+
+
+def test_source_and_duplicate_refs_rejected(env):
+    vm,c=env
+    st=real_standard(c)
+    with pytest.raises(Exception):c.submit(st,json.dumps([ref()]))
+    r=ref(body=b'new evidence')
+    with pytest.raises(Exception):c.submit(st,json.dumps([r,r]))
+
+
+def test_submission_capacity(env):
+    vm,c=env
+    st=real_standard(c)
+    for i in range(32):c.submit(st,json.dumps([ref(f'file{i}.txt',f'evidence {i}'.encode())]))
+    with pytest.raises(Exception):c.submit(st,json.dumps([ref('file33.txt',b'new distinct evidence')]))

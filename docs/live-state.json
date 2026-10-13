@@ -1,0 +1,384 @@
+{
+  "verifiedAt": "2026-10-13T02:33:25.085Z",
+  "contract": "0x0A639a6bd441853272834D0163f0C449968aA5a3",
+  "sourceSha256": "1d4c2e7f3746b4324a349fa18709e796ade82bfd80a88c99238abca11d3d2f2f",
+  "standards": [
+    {
+      "standard": {
+        "commitment": "4855cf84b4654232451c5116bab9ca8ed7de8045e3970d397a20f1c78d5fff9d",
+        "created_at": 1791805839,
+        "creator": "0xFE858F4f7b3F0Fff7947F40f83F0CF3b626fF580",
+        "criteria": [
+          "The reproduction discloses Python 3.12 asyncio, a command, 100 concurrent callers and a baseline control with 100 upstream calls.",
+          "Per-key coalescing makes exactly one upstream call for alpha, returns correct values to all 100 callers, and a distinct beta key increases total calls to two without cross-key leakage."
+        ],
+        "deadline": 1792411200,
+        "methodology": {
+          "sha256": "620b31b5b5f5b1feeae5ecfd439a79e37d523264ca7b036bcc59e50d8c4ccc9e",
+          "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/methodology.txt"
+        },
+        "original": {
+          "sha256": "8d54f84aaae0b605e6d78501343a2b835b548a29312c37ab335c542f2476ee24",
+          "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/original.txt"
+        },
+        "recheck_seconds": 604800,
+        "submission_ids": [
+          "bff57d720bf29737b17d3d5a5f25692d53cb8c9c43a9fa856882d3a3067e47f1",
+          "718adde59777f4e3ba6ebd8d00d7c7f7ec7561228b3c1d0d8a637fe4d58a6ae4",
+          "4e478eac3194cb3c4a930e3d0c1ab53bf587be7ec43adc0abe8cfcd4b4ee1aa0",
+          "8a6370f948fd6c78672167f94674074cd947260e314fd36bc0dd7b414c9d3dae"
+        ],
+        "title": "Synthetic cache coalescing reproduction"
+      },
+      "submissions": [
+        {
+          "commitment": "bff57d720bf29737b17d3d5a5f25692d53cb8c9c43a9fa856882d3a3067e47f1",
+          "evidence": [
+            {
+              "sha256": "24d04299209656fb91f4f8ab8219a0cd79e7ac5fa482b27e2e5c589aeb23904f",
+              "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/qualified.txt"
+            }
+          ],
+          "history": [
+            {
+              "actor": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+              "at": 1791806135,
+              "checks": [
+                "PASS",
+                "PASS"
+              ],
+              "evidence": [
+                {
+                  "sha256": "24d04299209656fb91f4f8ab8219a0cd79e7ac5fa482b27e2e5c589aeb23904f",
+                  "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/qualified.txt"
+                }
+              ],
+              "evidence_commitment": "1122f9c49607dfd7e363ab34c4b230f681b02c6a947ec0866dc9c521f8cfdf9a",
+              "integrity": "VERIFIED",
+              "outcome": "QUALIFIED",
+              "previous": "",
+              "reason": "Initial evaluation",
+              "revision": 0,
+              "verified": [
+                "8d54f84aaae0b605e6d78501343a2b835b548a29312c37ab335c542f2476ee24",
+                "620b31b5b5f5b1feeae5ecfd439a79e37d523264ca7b036bcc59e50d8c4ccc9e",
+                "24d04299209656fb91f4f8ab8219a0cd79e7ac5fa482b27e2e5c589aeb23904f"
+              ]
+            },
+            {
+              "actor": "0xFE858F4f7b3F0Fff7947F40f83F0CF3b626fF580",
+              "at": 1791806455,
+              "checks": [
+                "PASS",
+                "PASS"
+              ],
+              "evidence": [
+                {
+                  "sha256": "24d04299209656fb91f4f8ab8219a0cd79e7ac5fa482b27e2e5c589aeb23904f",
+                  "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/qualified.txt"
+                },
+                {
+                  "sha256": "5fdc03ab779cacab9fe1c6f98fb8013139b0852559ccfab326c54dd0feef7bfd",
+                  "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/supplement.txt"
+                }
+              ],
+              "evidence_commitment": "ef1ce4cc2ae168bcb7cc63465246afe2942212abd7ba2eb987c5590f5443bc59",
+              "integrity": "VERIFIED",
+              "outcome": "QUALIFIED",
+              "previous": "f2d3dbf987b24e5aee6217d8b6bbb743f4b9f8af76a03960d4b69aeea8986d05",
+              "reason": "Creator requests independent review of new supplemental concurrency and second-key observations.",
+              "revision": 1,
+              "verified": [
+                "8d54f84aaae0b605e6d78501343a2b835b548a29312c37ab335c542f2476ee24",
+                "620b31b5b5f5b1feeae5ecfd439a79e37d523264ca7b036bcc59e50d8c4ccc9e",
+                "24d04299209656fb91f4f8ab8219a0cd79e7ac5fa482b27e2e5c589aeb23904f",
+                "5fdc03ab779cacab9fe1c6f98fb8013139b0852559ccfab326c54dd0feef7bfd"
+              ]
+            }
+          ],
+          "participant": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+          "standard_id": "4855cf84b4654232451c5116bab9ca8ed7de8045e3970d397a20f1c78d5fff9d",
+          "submitted_at": 1791806007
+        },
+        {
+          "commitment": "718adde59777f4e3ba6ebd8d00d7c7f7ec7561228b3c1d0d8a637fe4d58a6ae4",
+          "evidence": [
+            {
+              "sha256": "bbcd2c24d7a7754af614a02e7cf126fce07e1ec68376e3494ccefeeb67123bfa",
+              "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/failed.txt"
+            }
+          ],
+          "history": [
+            {
+              "actor": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+              "at": 1791806274,
+              "checks": [
+                "FAIL",
+                "FAIL"
+              ],
+              "evidence": [
+                {
+                  "sha256": "bbcd2c24d7a7754af614a02e7cf126fce07e1ec68376e3494ccefeeb67123bfa",
+                  "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/failed.txt"
+                }
+              ],
+              "evidence_commitment": "6d680b64b34ea36355e922a60cd54ad5dfd4b874ddb46a3506b3ef376d0fe392",
+              "integrity": "VERIFIED",
+              "outcome": "FAILED",
+              "previous": "",
+              "reason": "Initial evaluation",
+              "revision": 0,
+              "verified": [
+                "8d54f84aaae0b605e6d78501343a2b835b548a29312c37ab335c542f2476ee24",
+                "620b31b5b5f5b1feeae5ecfd439a79e37d523264ca7b036bcc59e50d8c4ccc9e",
+                "bbcd2c24d7a7754af614a02e7cf126fce07e1ec68376e3494ccefeeb67123bfa"
+              ]
+            }
+          ],
+          "participant": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+          "standard_id": "4855cf84b4654232451c5116bab9ca8ed7de8045e3970d397a20f1c78d5fff9d",
+          "submitted_at": 1791806078
+        },
+        {
+          "commitment": "4e478eac3194cb3c4a930e3d0c1ab53bf587be7ec43adc0abe8cfcd4b4ee1aa0",
+          "evidence": [
+            {
+              "sha256": "4ae3512d5e00504b4767d823d8740d8ffb8e420d184e24b64ce49c23c472e6ec",
+              "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/inconclusive.txt"
+            }
+          ],
+          "history": [
+            {
+              "actor": "0x5981f03006DbB98907dE22dabB1a36921B75F9B1",
+              "at": 1791858431,
+              "checks": [
+                "FAIL",
+                "FAIL"
+              ],
+              "evidence": [
+                {
+                  "sha256": "4ae3512d5e00504b4767d823d8740d8ffb8e420d184e24b64ce49c23c472e6ec",
+                  "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/inconclusive.txt"
+                }
+              ],
+              "evidence_commitment": "0d4ac3daa46976b0947018a06608a8955b570424bbe9203fda767fc49ed3a13f",
+              "integrity": "VERIFIED",
+              "outcome": "FAILED",
+              "previous": "",
+              "reason": "Initial evaluation",
+              "revision": 0,
+              "verified": [
+                "8d54f84aaae0b605e6d78501343a2b835b548a29312c37ab335c542f2476ee24",
+                "620b31b5b5f5b1feeae5ecfd439a79e37d523264ca7b036bcc59e50d8c4ccc9e",
+                "4ae3512d5e00504b4767d823d8740d8ffb8e420d184e24b64ce49c23c472e6ec"
+              ]
+            }
+          ],
+          "participant": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+          "standard_id": "4855cf84b4654232451c5116bab9ca8ed7de8045e3970d397a20f1c78d5fff9d",
+          "submitted_at": 1791806232
+        },
+        {
+          "commitment": "8a6370f948fd6c78672167f94674074cd947260e314fd36bc0dd7b414c9d3dae",
+          "evidence": [
+            {
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/inconclusive.txt"
+            }
+          ],
+          "history": [
+            {
+              "actor": "0x5981f03006DbB98907dE22dabB1a36921B75F9B1",
+              "at": 1791858717,
+              "checks": [
+                "UNKNOWN",
+                "UNKNOWN"
+              ],
+              "evidence": [
+                {
+                  "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "url": "https://raw.githubusercontent.com/ANZA24k/ReplicaProof/bb8ae69312f9fc7215c88245cc23ad25b9ea5caf/fixtures/inconclusive.txt"
+                }
+              ],
+              "evidence_commitment": "98fd2994392a2f2384df1b889776eab8e0facfed4b1399f99724b92bf44f52f2",
+              "integrity": "HASH_MISMATCH",
+              "outcome": "INCONCLUSIVE",
+              "previous": "",
+              "reason": "Initial evaluation",
+              "revision": 0,
+              "verified": [
+                "8d54f84aaae0b605e6d78501343a2b835b548a29312c37ab335c542f2476ee24",
+                "620b31b5b5f5b1feeae5ecfd439a79e37d523264ca7b036bcc59e50d8c4ccc9e"
+              ]
+            }
+          ],
+          "participant": "0x5981f03006DbB98907dE22dabB1a36921B75F9B1",
+          "standard_id": "4855cf84b4654232451c5116bab9ca8ed7de8045e3970d397a20f1c78d5fff9d",
+          "submitted_at": 1791858601
+        }
+      ]
+    }
+  ],
+  "transactions": [
+    {
+      "label": "Lock standard",
+      "hash": "0x6c5538765bd1a8b44cd26bb744afdc22861eea097d32a49afffdd8dbfe83a9f9",
+      "result": "Locked",
+      "sender": "0xFE858F4f7b3F0Fff7947F40f83F0CF3b626fF580",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "IDLE",
+        "AGREE"
+      ],
+      "returnValue": "\"4855cf84b4654232451c5116bab9ca8ed7de8045e3970d397a20f1c78d5fff9d\""
+    },
+    {
+      "label": "Submit qualifying evidence",
+      "hash": "0x8315ec680124677a7c3135c771c9232b60ed5d9b9527d246f0965792e88f6983",
+      "result": "Submitted",
+      "sender": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE"
+      ],
+      "returnValue": "\"bff57d720bf29737b17d3d5a5f25692d53cb8c9c43a9fa856882d3a3067e47f1\""
+    },
+    {
+      "label": "Submit failed evidence",
+      "hash": "0xc91760960b380ba2a61c248dc99ba71793ec71e273a6441bcd0ab3741e7b4304",
+      "result": "Submitted",
+      "sender": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE"
+      ],
+      "returnValue": "\"718adde59777f4e3ba6ebd8d00d7c7f7ec7561228b3c1d0d8a637fe4d58a6ae4\""
+    },
+    {
+      "label": "Evaluate qualifying reproduction",
+      "hash": "0xb4cb2b522b9b71f1cadccb2abb6278d0da3bd5ed6de3574aff1db349f08d039f",
+      "result": "null",
+      "sender": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "IDLE",
+        "IDLE",
+        "AGREE",
+        "AGREE"
+      ],
+      "returnValue": "null"
+    },
+    {
+      "label": "Submit insufficient evidence",
+      "hash": "0x28a2b2f23e5644b8c278803b52b38046a05dfef42f1c011c6d749a5b957df75a",
+      "result": "Submitted",
+      "sender": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "IDLE",
+        "AGREE",
+        "IDLE",
+        "AGREE"
+      ],
+      "returnValue": "\"4e478eac3194cb3c4a930e3d0c1ab53bf587be7ec43adc0abe8cfcd4b4ee1aa0\""
+    },
+    {
+      "label": "Evaluate failed reproduction",
+      "hash": "0x4db0b6614017e01f58e00b95a18ddf3db1f0b50d0aad0393da2b5ef72d479fb3",
+      "result": "null",
+      "sender": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "DISAGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "IDLE"
+      ],
+      "returnValue": "null"
+    },
+    {
+      "label": "Creator recheck",
+      "hash": "0xde5780e848f8ae0a13e0d50d43fd4ce95ad28b62dcb6f692dc8ea984e714df21",
+      "result": "QUALIFIED; prior revision preserved",
+      "sender": "0xFE858F4f7b3F0Fff7947F40f83F0CF3b626fF580",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "IDLE",
+        "AGREE",
+        "AGREE",
+        "IDLE"
+      ],
+      "returnValue": "null"
+    },
+    {
+      "label": "Evaluate insufficient evidence",
+      "hash": "0xecedb0b6829e3988f5db89095e5d1f28bc84277c134a118654d8103957d34243",
+      "result": "FAILED; absent required observations",
+      "sender": "0x5981f03006DbB98907dE22dabB1a36921B75F9B1",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "DISAGREE",
+        "AGREE"
+      ],
+      "returnValue": "null"
+    },
+    {
+      "label": "Submit integrity test",
+      "hash": "0x74cd0f11e0ce4bc2a8e70115f472b442f0ad4c19e4c219956958cd58976cf1e1",
+      "result": "Deliberate hash mismatch",
+      "sender": "0x5981f03006DbB98907dE22dabB1a36921B75F9B1",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "IDLE",
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "AGREE"
+      ],
+      "returnValue": "\"8a6370f948fd6c78672167f94674074cd947260e314fd36bc0dd7b414c9d3dae\""
+    },
+    {
+      "label": "Evaluate integrity mismatch",
+      "hash": "0x60e90dd204b89470588869b420590b7f3447b8e902fb89d639627f50e04d2844",
+      "result": "INCONCLUSIVE; HASH_MISMATCH",
+      "sender": "0x5981f03006DbB98907dE22dabB1a36921B75F9B1",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "IDLE"
+      ],
+      "returnValue": "null"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "replicaproof",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build web --outDir ../dist --emptyOutDir",
+    "check": "tsc --noEmit",
+    "test": "node --test web/tests/*.test.mjs"
+  },
+  "dependencies": {
+    "genlayer-js": "1.1.8"
+  },
+  "devDependencies": {
+    "vite": "8.3.4",
+    "typescript": "7.0.2",
+    "@types/node": "26.6.5"
+  }
+}

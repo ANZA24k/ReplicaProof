@@ -1,0 +1,11 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import {escapeHTML,refs,successful} from '../src/safety.mjs';
+const ref={url:'https://raw.githubusercontent.com/a/b/'+ 'a'.repeat(40)+'/test.txt',sha256:'b'.repeat(64)};
+test('Untrusted content is escaped',()=>assert.equal(escapeHTML('<script>"&'), '&lt;script&gt;&quot;&amp;'));
+test('Exact references accepted',()=>assert.equal(refs(JSON.stringify([ref])).length,1));
+test('Unsafe URLs rejected',()=>assert.throws(()=>refs(JSON.stringify([{...ref,url:'http://localhost/a'}]))));
+test('Duplicate content rejected',()=>assert.throws(()=>refs(JSON.stringify([ref,ref]))));
+test('Finalized revert is never success',()=>assert.equal(successful({statusName:'FINALIZED',consensus_data:{leader_receipt:[{mode:'leader',execution_result:'ERROR'}]}}),false));
+test('Accepted is never final',()=>assert.equal(successful({statusName:'ACCEPTED',consensus_data:{leader_receipt:[{mode:'leader',execution_result:'SUCCESS'}]}}),false));
+test('Finalized successful execution accepted',()=>assert.equal(successful({statusName:'FINALIZED',consensus_data:{leader_receipt:[{mode:'leader',execution_result:'SUCCESS'}]}}),true));

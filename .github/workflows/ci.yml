@@ -1,0 +1,40 @@
+name: ReplicaProof release gate
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  contract:
+    env:
+      GENVM_VERSION: v0.2.16
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/genvm-linter
+            ~/.cache/gltest-direct
+          key: genvm-v0.2.16-sdk
+      - run: pip install -r requirements-dev.txt
+      - run: genvm-lint check contracts/replicaproof.py
+      - name: Reuse verified GenVM archive
+        run: |
+          mkdir -p ~/.cache/gltest-direct
+          cp ~/.cache/genvm-linter/genvm-universal-v0.2.16.tar.xz ~/.cache/gltest-direct/
+      - run: python -m pytest tests -q
+      - run: python fixtures/reproduce.py
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run build

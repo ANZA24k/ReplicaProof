@@ -1,0 +1,169 @@
+{
+  "contract": "0x0A639a6bd441853272834D0163f0C449968aA5a3",
+  "deploymentTransaction": "0xbcfb8daaff63ebd86c40d7d690045dadea161ddfb777e6d3804df27e19a4c8c3",
+  "explorer": "https://explorer-studio.genlayer.com",
+  "pilot": [
+    {
+      "label": "Lock standard",
+      "hash": "0x6c5538765bd1a8b44cd26bb744afdc22861eea097d32a49afffdd8dbfe83a9f9",
+      "result": "Locked",
+      "sender": "0xFE858F4f7b3F0Fff7947F40f83F0CF3b626fF580",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "IDLE",
+        "AGREE"
+      ],
+      "returnValue": "\"4855cf84b4654232451c5116bab9ca8ed7de8045e3970d397a20f1c78d5fff9d\""
+    },
+    {
+      "label": "Submit qualifying evidence",
+      "hash": "0x8315ec680124677a7c3135c771c9232b60ed5d9b9527d246f0965792e88f6983",
+      "result": "Submitted",
+      "sender": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE"
+      ],
+      "returnValue": "\"bff57d720bf29737b17d3d5a5f25692d53cb8c9c43a9fa856882d3a3067e47f1\""
+    },
+    {
+      "label": "Submit failed evidence",
+      "hash": "0xc91760960b380ba2a61c248dc99ba71793ec71e273a6441bcd0ab3741e7b4304",
+      "result": "Submitted",
+      "sender": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE"
+      ],
+      "returnValue": "\"718adde59777f4e3ba6ebd8d00d7c7f7ec7561228b3c1d0d8a637fe4d58a6ae4\""
+    },
+    {
+      "label": "Evaluate qualifying reproduction",
+      "hash": "0xb4cb2b522b9b71f1cadccb2abb6278d0da3bd5ed6de3574aff1db349f08d039f",
+      "result": "null",
+      "sender": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "IDLE",
+        "IDLE",
+        "AGREE",
+        "AGREE"
+      ],
+      "returnValue": "null"
+    },
+    {
+      "label": "Submit insufficient evidence",
+      "hash": "0x28a2b2f23e5644b8c278803b52b38046a05dfef42f1c011c6d749a5b957df75a",
+      "result": "Submitted",
+      "sender": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "IDLE",
+        "AGREE",
+        "IDLE",
+        "AGREE"
+      ],
+      "returnValue": "\"4e478eac3194cb3c4a930e3d0c1ab53bf587be7ec43adc0abe8cfcd4b4ee1aa0\""
+    },
+    {
+      "label": "Evaluate failed reproduction",
+      "hash": "0x4db0b6614017e01f58e00b95a18ddf3db1f0b50d0aad0393da2b5ef72d479fb3",
+      "result": "null",
+      "sender": "0x9e3CCf51f19057182D8cdbC16B6B87b4BfCEFF78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "DISAGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "IDLE"
+      ],
+      "returnValue": "null"
+    },
+    {
+      "label": "Creator recheck",
+      "hash": "0xde5780e848f8ae0a13e0d50d43fd4ce95ad28b62dcb6f692dc8ea984e714df21",
+      "result": "QUALIFIED; prior revision preserved",
+      "sender": "0xFE858F4f7b3F0Fff7947F40f83F0CF3b626fF580",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "IDLE",
+        "AGREE",
+        "AGREE",
+        "IDLE"
+      ],
+      "returnValue": "null"
+    },
+    {
+      "label": "Evaluate insufficient evidence",
+      "hash": "0xecedb0b6829e3988f5db89095e5d1f28bc84277c134a118654d8103957d34243",
+      "result": "FAILED; absent required observations",
+      "sender": "0x5981f03006DbB98907dE22dabB1a36921B75F9B1",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "DISAGREE",
+        "AGREE"
+      ],
+      "returnValue": "null"
+    },
+    {
+      "label": "Submit integrity test",
+      "hash": "0x74cd0f11e0ce4bc2a8e70115f472b442f0ad4c19e4c219956958cd58976cf1e1",
+      "result": "Deliberate hash mismatch",
+      "sender": "0x5981f03006DbB98907dE22dabB1a36921B75F9B1",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "IDLE",
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "AGREE"
+      ],
+      "returnValue": "\"8a6370f948fd6c78672167f94674074cd947260e314fd36bc0dd7b414c9d3dae\""
+    },
+    {
+      "label": "Evaluate integrity mismatch",
+      "hash": "0x60e90dd204b89470588869b420590b7f3447b8e902fb89d639627f50e04d2844",
+      "result": "INCONCLUSIVE; HASH_MISMATCH",
+      "sender": "0x5981f03006DbB98907dE22dabB1a36921B75F9B1",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "IDLE"
+      ],
+      "returnValue": "null"
+    }
+  ],
+  "evidenceCommit": "bb8ae69312f9fc7215c88245cc23ad25b9ea5caf",
+  "sourceSha256": "1d4c2e7f3746b4324a349fa18709e796ade82bfd80a88c99238abca11d3d2f2f"
+}
