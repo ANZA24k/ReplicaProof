@@ -4,6 +4,7 @@ import { TransactionHashVariant, TransactionStatus } from 'genlayer-js/types';
 import deployment from './deployment.json';
 import { escapeHTML as esc, refs, successful } from './safety.mjs';
 import './style.css';
+import { mountParticleDrift } from './particle-drift';
 
 type Ref = {url:string;sha256:string};
 type Revision={revision:number;at:number;actor:string;reason:string;evidence:Ref[];evidence_commitment:string;checks:string[];integrity:string;verified:string[];outcome:string;previous:string};
@@ -112,3 +113,6 @@ $('confirm-write').onclick=async()=>{
 $('hash-file').onchange=async()=>{const f=($('hash-file') as HTMLInputElement).files?.[0];if(!f)return;if(f.size>16384){$('hash-output').textContent='Contract limit: 16 KiB per file.';return;}const bytes=await f.arrayBuffer();const h=await crypto.subtle.digest('SHA-256',bytes);$('hash-output').textContent=Array.from(new Uint8Array(h)).map(v=>v.toString(16).padStart(2,'0')).join('');};
 $('refresh').onclick=()=>void refresh();$('close-detail').onclick=()=>{$('detail').style.display='none';selected=undefined;selectedSubmission=undefined;};
 void refresh();
+
+const stopBackground=mountParticleDrift();
+if(import.meta.hot)import.meta.hot.dispose(stopBackground);

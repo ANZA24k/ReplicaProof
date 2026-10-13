@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1300" viewBox="0 0 1800 1300" fill="none">
+<defs>
+ <linearGradient id="paper" x1="300" y1="100" x2="1500" y2="1200" gradientUnits="userSpaceOnUse"><stop stop-color="#dfe8d0"/><stop offset=".48" stop-color="#edf0de"/><stop offset="1" stop-color="#b5cfb8"/></linearGradient>
+ <radialGradient id="wash"><stop stop-color="#7aa58d" stop-opacity=".65"/><stop offset="1" stop-color="#7aa58d" stop-opacity="0"/></radialGradient>
+ <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse"><path d="M72 0H0V72" stroke="#365e48" stroke-opacity=".13"/><circle cx="0" cy="0" r="2" fill="#365e48" fill-opacity=".3"/></pattern>
+ <linearGradient id="sheet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffdf0" stop-opacity=".3"/><stop offset="1" stop-color="#4b7d65" stop-opacity=".14"/></linearGradient>
+</defs>
+<rect width="1800" height="1300" fill="url(#paper)"/>
+<ellipse cx="1690" cy="300" rx="750" ry="680" fill="url(#wash)"/>
+<ellipse cx="100" cy="1100" rx="700" ry="560" fill="url(#wash)" opacity=".8"/>
+<rect width="1800" height="1300" fill="url(#grid)"/>
+<!-- Three overlapping research records: original, reproduction, independent review. -->
+<g transform="translate(1280 180) rotate(17)" stroke="#39644b" stroke-opacity=".3">
+ <rect x="-70" y="70" width="330" height="470" rx="14" fill="url(#sheet)"/>
+ <rect x="-32" y="30" width="330" height="470" rx="14" fill="url(#sheet)"/>
+ <rect width="330" height="470" rx="14" fill="url(#sheet)"/>
+ <path d="M40 55h150M40 88h250M40 102h210M40 116h230M40 355h250M40 373h180M40 391h220" stroke-width="3"/>
+ <circle cx="165" cy="236" r="78"/>
+ <circle cx="165" cy="236" r="55"/>
+ <path d="M127 235l25 26 54-58" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M165 137v-20M165 335v-20M66 236H46M284 236h-20"/>
+</g>
+<!-- Repeated experimental traces, intentionally decorative rather than measured data. -->
+<g stroke="#34684e" stroke-opacity=".22" stroke-width="1.6">
+ <path d="M-80 780C90 760 30 440 185 470S315 765 470 695S500 395 625 425"/>
+ <path d="M-80 812C90 792 30 472 185 502S315 797 470 727S500 427 625 457"/>
+ <path d="M-80 844C90 824 30 504 185 534S315 829 470 759S500 459 625 489"/>
+ <path d="M-80 876C90 856 30 536 185 566S315 861 470 791S500 491 625 521"/>
+ <path d="M-80 908C90 888 30 568 185 598S315 893 470 823S500 523 625 553"/>
+ <path d="M-80 940C90 920 30 600 185 630S315 925 470 855S500 555 625 585"/>
+</g>
+<g stroke="#426d53" stroke-opacity=".25">
+ <circle cx="1620" cy="1025" r="210"/><circle cx="1620" cy="1025" r="180"/><circle cx="1620" cy="1025" r="145"/><circle cx="1620" cy="1025" r="95"/>
+ <path d="M1390 1025h460M1620 795v460" stroke-dasharray="5 9"/>
+ <path d="M0 190H235L330 285H570M1200 1080h-280l-95-95H590"/>
+</g>
+<g fill="#35624c" fill-opacity=".32"><circle cx="235" cy="190" r="6"/><circle cx="330" cy="285" r="6"/><circle cx="570" cy="285" r="6"/><circle cx="920" cy="1080" r="6"/><circle cx="825" cy="985" r="6"/></g>
+</svg>
